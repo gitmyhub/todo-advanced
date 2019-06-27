@@ -1,0 +1,16 @@
+Rest API
+C -> Create -> post method -> body
+R -> Read -> get method -> no body
+U -> update -> put method -> body
+D -> delete -> delete method -> body or no body
+
+
+Design:
+sign-in page -> Todos page  ----> other route --> page-not-found page
+
+Todos page:
+main component - Todos component 
+                        - Todo-header (input for user to enter a todo)
+                        - Todo-list (display list of todos)
+                            - todo-item ( todo )
+                        - todo-footer (items remaining)
