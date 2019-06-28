@@ -4,6 +4,8 @@ R -> Read -> get method -> no body
 U -> update -> put method -> body
 D -> delete -> delete method -> body or no body
 
+Sign In -> 
+
 
 Design:
 sign-in page -> Todos page  ----> other route --> page-not-found page
@@ -14,3 +16,13 @@ main component - Todos component
                         - Todo-list (display list of todos)
                             - todo-item ( todo )
                         - todo-footer (items remaining)
+
+
+input elements -> States -> Pristine, touched, Dirty
+Reactive forms:
+    1) create Formcontrolname
+    2) assign formcntrol to formgroup (segregate your form elements)
+    3) create formgroup instance in ts file. create individual form controls but better way is to use form Builder.
+    4) inject formbuilder. get instance of formgroup from formbuilder which will generate your form controls.
+    5) make formcontrols as required by setting validators.required.
+    6) display error message by checking if the input fields are touched.
