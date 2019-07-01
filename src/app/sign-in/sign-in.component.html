@@ -9,6 +9,9 @@
         <div class="input-errors" *ngIf="frm.get('password').hasError('required') && frm.get('password').touched">
             Please enter your password
         </div>
+        <div class="sign-in-error" *ngIf="hasFailed">
+            Invalid Username and Password.
+        </div>
         <button (click)="doSignIn()" [disabled]="!frm.valid">Sign In</button>
     </form>
 </div>

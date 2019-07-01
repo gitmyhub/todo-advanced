@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { ApiService } from '../api.service';
+import { SessionService } from '../session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,8 +12,12 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class SignInComponent implements OnInit {
 
   public frm: FormGroup;
+  hasFailed = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+              private api: ApiService,
+              private session: SessionService,
+              private router: Router) {
 /*    this.username = new FormControl();
     this.password = new FormControl(); */
 
@@ -32,10 +39,20 @@ export class SignInComponent implements OnInit {
 
   public doSignIn() {
     // get username password
-    const username = this.frm.get('username').value;
-    const password = this.frm.get('password').value;
+    const username = this.frm.get('username').value; // step 1
+    const password = this.frm.get('password').value; // step 2   javascript v8 engine
 
     // authenticate through API
+    this.api.signIn(username, password).subscribe((response: any) => {
+        // response.token is to be stored in a session
+        this.session.accessToken = response.token;
+        this.session.name = response.name;
+        // take him to todos page
+        this.router.navigate(['todos']);
+    },
+    (error) => {
+      this.hasFailed = true;
+    });
 
   }
 
