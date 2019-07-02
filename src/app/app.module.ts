@@ -8,13 +8,19 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { TodosComponent } from './todos/todos.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     TodosComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TodoListHeaderComponent,
+    TodoListComponent,
+    TodoListFooterComponent
   ],
   imports: [
     BrowserModule,

@@ -12,10 +12,10 @@ sign-in page -> Todos page  ----> other route --> page-not-found page
 
 Todos page:
 main component - Todos component 
-                        - Todo-header (input for user to enter a todo)
+                        - Todo-list-header (input for user to enter a todo)
                         - Todo-list (display list of todos)
-                            - todo-item ( todo )
-                        - todo-footer (items remaining)
+                            - todo-list-item ( todo )
+                        - todo-list-footer (items remaining)
 
 
 input elements -> States -> Pristine, touched, Dirty
