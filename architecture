@@ -17,6 +17,8 @@ main component - Todos component
                             - todo-list-item ( todo )
                         - todo-list-footer (items remaining)
 
+services :  todos component -> Todo data service -> api service -> make the Http calls to the server
+
 
 input elements -> States -> Pristine, touched, Dirty
 Reactive forms:
