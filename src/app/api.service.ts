@@ -45,6 +45,17 @@ export class ApiService {
             );
   }
 
+  public updateTodo(todo: Todo): Observable<Todo> {
+    const headers = this.getRequestHeaders();
+    return this.http
+            .put('http://localhost:3000/todos/' + todo.id, todo, { headers })
+            .pipe(
+              map(response => {
+                  return new Todo(response);
+              })
+            );
+  }
+
   public getRequestHeaders() {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + this.session.accessToken

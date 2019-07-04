@@ -24,6 +24,16 @@
       "id": 7,
       "title": "learn angular again",
       "completed": false
+    },
+    {
+      "title": "red",
+      "complete": false,
+      "id": 8
+    },
+    {
+      "title": "add todo",
+      "complete": false,
+      "id": 9
     }
   ]
 }

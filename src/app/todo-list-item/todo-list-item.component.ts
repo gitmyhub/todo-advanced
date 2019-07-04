@@ -2,26 +2,24 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../todo';
 
 @Component({
-  selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  selector: 'app-todo-list-item',
+  templateUrl: './todo-list-item.component.html',
+  styleUrls: ['./todo-list-item.component.css']
 })
-export class TodoListComponent implements OnInit {
+export class TodoListItemComponent implements OnInit {
 
   @Input()
-  todos: Todo[];
+  todo: Todo;
 
   @Output()
   toggleComplete: EventEmitter<Todo> = new EventEmitter();
-
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onToggleTodoComplete(todo: Todo) {
+  toggleTodoComplete(todo: Todo) {
     this.toggleComplete.emit(todo);
   }
-
 }

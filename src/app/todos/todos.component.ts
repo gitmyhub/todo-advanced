@@ -23,7 +23,7 @@ export class TodosComponent implements OnInit {
         .addTodo(todo)
         .subscribe(
           (newTodo) => {
-
+              this.todos = this.todos.concat(newTodo);
           }
         );
 
@@ -35,6 +35,14 @@ export class TodosComponent implements OnInit {
     .subscribe((todos) => {
         this.todos = todos;
     });
+  }
+
+  onToggleTodoComplete(todo) {
+    // API Call to update
+    this.todoDataService.toggleTodoComplete(todo)
+      .subscribe((updatedTodo) => {
+          todo = updatedTodo;
+      });
   }
 
 }
