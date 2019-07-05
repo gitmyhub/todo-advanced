@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { ApiService } from '../api.service';
 import { SessionService } from '../session.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -16,6 +17,7 @@ export class SignInComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private api: ApiService,
+              private auth: AuthService,
               private session: SessionService,
               private router: Router) {
 /*    this.username = new FormControl();
@@ -45,8 +47,10 @@ export class SignInComponent implements OnInit {
     // authenticate through API
     this.api.signIn(username, password).subscribe((response: any) => {
         // response.token is to be stored in a session
-        this.session.accessToken = response.token;
-        this.session.name = response.name;
+        this.auth.doSignIn(
+          response.token,
+          response.name
+        );
         // take him to todos page
         this.router.navigate(['todos']);
     },

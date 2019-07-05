@@ -10,4 +10,12 @@ export class SessionService {
 
   constructor( ) { }
 
+  getAccessToken() {
+    return this.accessToken;
+  }
+
+  setAccessToken(value: string) {
+    this.accessToken = value;
+  }
+
 }

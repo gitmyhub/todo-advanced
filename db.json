@@ -1,39 +1,14 @@
 {
   "todos": [
     {
-      "title": "Clean inbox",
-      "complete": false,
-      "id": 2
-    },
-    {
-      "title": "test",
-      "complete": false,
-      "id": 4
-    },
-    {
       "title": "eat",
       "complete": false,
       "id": 5
     },
     {
-      "title": "learn angular",
+      "title": "play",
       "complete": false,
       "id": 6
-    },
-    {
-      "id": 7,
-      "title": "learn angular again",
-      "completed": false
-    },
-    {
-      "title": "red",
-      "complete": false,
-      "id": 8
-    },
-    {
-      "title": "add todo",
-      "complete": false,
-      "id": 9
     }
   ]
 }

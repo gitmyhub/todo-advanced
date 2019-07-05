@@ -56,6 +56,15 @@ export class ApiService {
             );
   }
 
+  public deleteTodo(todo: Todo): Observable<null> {
+    const headers = this.getRequestHeaders();
+    return this.http
+            .delete('http://localhost:3000/todos/' + todo.id, { headers })
+            .pipe(
+              map(response => null)
+            );
+  }
+
   public getRequestHeaders() {
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + this.session.accessToken

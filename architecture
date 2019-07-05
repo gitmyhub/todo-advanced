@@ -30,3 +30,31 @@ Reactive forms:
     4) inject formbuilder. get instance of formgroup from formbuilder which will generate your form controls.
     5) make formcontrols as required by setting validators.required.
     6) display error message by checking if the input fields are touched.
+
+
+
+
+Concepts:
+Data Binding:
+    Interpolation -> display data in html from typescript -> {{}}
+    Event Binding -> for a binding to Method calls
+    Two way data binding -> ngModel -> banana in a box
+
+Forms -> Reactive forms 
+
+RxJs -> Huge topic -> http (HttpClient) -> Observable -> subscribe method -> pipe() -> operators -> map() => filter data.
+
+Router -> router paths
+
+Route Guards -> Protecting your routes
+Resovler -> Load data before showing the page
+
+Component Interaction:
+ Parent to child -> Inject data into child component and access in child using @Input()
+ child to parent -> emit event from child using @output event emitter and access it in parent through event binding
+
+create Todo Model -> using typescript file and defining the class
+
+Pipe
+
+Angular Material -> html & css

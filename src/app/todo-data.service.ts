@@ -22,5 +22,10 @@ export class TodoDataService {
     todo.complete = !todo.complete;
     return this.api.updateTodo(todo);
   }
+
+  deleteTodo(todo: Todo) {
+    // Call api
+    return this.api.deleteTodo(todo);
+  }
 }
 
